@@ -1,0 +1,20 @@
+#nav ul {
+        list-style-type:none;  
+        float:left; 
+        position:relative; 
+        left:50%;
+}
+
+#nav li {
+        float:left; 
+        margin:0 5px; 
+        position:relative; 
+        right:50%; 
+}
+#nav li.current a{
+        color:#F00;
+}
+
+div.clear {
+        clear:both;
+}

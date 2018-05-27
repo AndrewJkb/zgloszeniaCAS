@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<title>Zgłoszenia CSS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-blue-grey.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style_admin.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <ul class="w3-navbar w3-theme-d2 w3-left-align w3-large">
+  <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+    <a class="w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  </li>
+  <li><a href="main.php" class="w3-padding-large w3-theme-d4 w3-rozstrzelone">Zgłoszenia</a></li>
+  <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Odśwież">Odśwież</a></li>
+  <li class="w3-hide-small w3-dropdown-hover">
+    <a href="moje.php" class="w3-padding-large w3-hover-white" title="Zgłoszenia">Moje zgłoszenia</span></a>     
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="zamkniete.php">Zamknięte zgłoszenia</a>
+      <a href="archiwum.php">Archiwum zgłoszeń</a>
+      <a href="wszystkie.php">Wszystkie zgłoszenia</a>
+    </div>
+  </li>
+	<li class="w3-hide-small"><a href="szukaj.php" class="w3-padding-large w3-hover-white" title="Start">Szukaj</a></li>
+    <li class="w3-hide-small"><a href="stats.php" class="w3-padding-large w3-hover-white" title="Start">Statystyki</a></li>
+  <li class="w3-hide-small"><a href="register.php" class="w3-padding-large w3-hover-white" title="Start">Rejestracja</a></li>
+  <li class="w3-hide-small"><a href="todo.php" class="w3-padding-large w3-hover-white" title="Start">Do zrobienia</a></li>
+  <li class="w3-hide-small"><a href="logusers.php" class="w3-padding-large w3-hover-white" title="Start">Kto i kiedy</a></li>
+  <li class="w3-hide-small"><a href="users.php" class="w3-padding-large w3-hover-white" title="Start">Użytkownicy</a></li>
+  <li class="w3-hide-small w3-dropdown-hover w3-right">
+  <a href="#" class="w3-padding-large w3-hover-white" title="Andrzej"><img src="img/img_avatar.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
+  <div class="w3-dropdown-content w3-white w3-card-4">
+    <a href="profil.php" title="Profil">Profil</a>
+	<a href="includes/logout.php" title="Wyloguj">Wyloguj</a>
+    </div>
+  </li>
+ </ul>
+ </div><!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+   </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+	
+	<div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+	<span class="w3-right w3-opacity"><a href="dodaj.php"><img src="img/newticket.png" title="Dodaj Zgłoszenie"></a></span>
+        <h4>Witaj <b>Andrzej</b>,
+	  dzisiaj jest <b>wtorek</b>, <b>10 stycznia 2017 r.</b></h4>
+        <hr class="w3-clear">
+        <p></p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+<table width="950" align="center" valign="middle">
+		<tr align="center" valign="middle">
+		<td align="left" valign="middle">Wszystkie przyjęte zgłoszenia: <b>256</b><br>
+	Wszystkie otwarte zgłoszenia: <b>15</b><br />
+	Wszystkie zamknięte zgłoszenia: <b>241</b><br></td><td>
+	<td align="left" valign="middle">Otwarte zgłoszenia nie przypisane: <b>0</b><br>
+	Otwarte zgłoszenia - Andrzej: <b>8</b><br>
+	Otwarte zgłoszenia - Marcin: <b>7</b><br></td><td>
+	<td align="left" valign="middle">Zamknięte zgłoszenia - Andrzej: <b>134</b><br>
+	Zamknięte zgłoszenia - Marcin: <b>107</b></td></tr></table>			
+			<br /><br /></div>
+            <div class="w3-half">
+ </div>
+        </div>
+ 
+      </div><div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <span class="w3-right w3-opacity"><b>2017-01-03 13:55:14</b></span>
+        <h4>Przypisany do:&nbsp&nbsp<b>Andrzej</b><br />Status Zgłoszenia:&nbsp&nbsp<b>Zamknięte</b></h4><br>
+		Skąd: <b>Stary Humanik 03 - Biblioteka</b>&nbsp&nbsp&nbsp&nbsp
+		Osoba kontaktowa:&nbsp&nbsp<b>Brak</b>&nbsp&nbsp&nbsp&nbspTelefon:&nbsp&nbsp<b>5474</b>
+		
+        <hr class="w3-clear">
+        <p>Komputer nie uruchamia się</p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half"><b></b><br /><br /></div>
+            <div class="w3-half"></div>
+        </div>
+        <a href="edytuj.php?id=249"><button type="button" class="w3-btn w3-theme-d1 w3-margin-bottom" id="przycisk">Edytuj</button></a>&nbsp&nbsp&nbsp&nbsp
+		<a href="zamknij.php?id=249&user_id=1"><button type="button" class="w3-btn w3-theme-d1 w3-margin-bottom" id="przycisk">Zamknij</button></a>&nbsp&nbsp&nbsp&nbsp
+<a href="usun.php?id=249&user_id=1"><button type="button" class="w3-btn w3-theme-d1 w3-margin-bottom" id="przycisk">Usuń</button></a><br /><br /></div>
+<div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <span class="w3-right w3-opacity"><b></b></span>
+        <h4></h4><br><label><b>Data:</b></label>&nbsp&nbsp2017-01-04 09:43:21<br />
+		<label><b>Opis:</b></label>&nbsp&nbsp<br /><br /><p>Szanowny Panie.</p>
+<p>Piszę do Pana z biblioteki Wydziału Filozofii i Socjologii, żeby zgłosić problem z komputerem. Uprzejmie proszę o pilny kontakt, ponieważ mamy wielu czytelnik&oacute;w i sprawny komputer jest mi bardzo potrzebny w codziennej pracy. Zgłaszałam już ten fakt telefonicznie w dniu dzisiejszym, ale ponawiam prośbę jeszcze raz, ponieważ sprawa jest pilna a nikt od Państwa się dzisiaj nie pojawił. Podaję Panu nr telefonu (5474; biblioteka znajduje się w budynku starej humanistyki).</p>
+<p>Z poważaniem, Anna Kuczyńska</p><br />
+		
+		<hr class="w3-clear">
+        <label><b>Data:</b></label>&nbsp&nbsp2017-01-04 14:11:52<br />
+		<label><b>Opis:</b></label>&nbsp&nbsp<br /><br /><p>Dzwonił Pan Giza. to ich wewnętrzny problem. Do zamknięcia.</p><br />
+		
+		<hr class="w3-clear">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half"><b></b><br /><br /></div>
+            <div class="w3-half"></div>
+		  </div>
+		  <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <span class="w3-right w3-opacity"><b></b></span>
+        <h4></h4><br><b>Data:</b>&nbsp&nbsp2017-01-04 14:12:00&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Kto:</b>&nbsp&nbspAndrzej&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Pole:</b>&nbsp&nbspZgłoszenie zamknięte<br />
+		<b>Data:</b>&nbsp&nbsp2017-01-04 14:11:52&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Kto:</b>&nbsp&nbspAndrzej&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Pole:</b>&nbsp&nbspDodano komentarz<br />
+		<b>Data:</b>&nbsp&nbsp2017-01-04 09:43:21&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Kto:</b>&nbsp&nbspAndrzej&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Pole:</b>&nbsp&nbspDodano komentarz<br />
+		<b>Data:</b>&nbsp&nbsp2017-01-03 13:55:14&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Kto:</b>&nbsp&nbspAndrzej&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Pole:</b>&nbsp&nbspRekord dodano<br /><p></p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half"><b></b><br /><br /></div>
+            <div class="w3-half"></div>
+        </div><form action="add_koment.php" method=post>
+		<label class="dodaj"><b>Aktualizacja:</b></label>
+		<input type="hidden" name="id_zgl" value="249">
+		<input type="hidden" name="przypisany" value="andrzej">
+		<textarea name="komentarz" rows="15" cols="30" class="dodaj"></textarea>
+		<button id="przycisk" type="submit" value="Aktualizuj" >Aktualizuj</button>
+		</form>
+        
+</div>
+	</div>
+    <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div><br><footer class="w3-container w3-theme-d3 w3-padding-16" style="text-align:center"><footer class="w3-container w3-theme-d5 w3-padding-center">
+  <p>Created by <b>Andrzej Jakubek</b> &#169 2016-2017<br />
+	 Strona wygenerowana w <b>0.0156</b> sekund.</p>
+</footer>
+</body>
+</html>

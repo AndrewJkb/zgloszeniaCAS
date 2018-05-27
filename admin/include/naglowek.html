@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<title>Zgłoszenia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../style_admin.css">
+<link rel="stylesheet" href="../custom.css">
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../tinymce/tinymce.min.js"></script>
+<script>
+tinymce.init({
+	selector: "textarea",
+      
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+	 
+	language : 'pl',
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        	 
+    
+});
+
+</script>
+<style>html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}</style>
+<style type="text/css">
+  body {
+    padding-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+
+   <?php
+$stoper_start = microtime(true);  // start pomiaru
+
+$id_user_session = $_SESSION['user_id'];
+
+list($rola) = mysql_fetch_row(mysql_query("SELECT members.user_role from members WHERE members.id = $id_user_session"));
+list($last_login) = mysql_fetch_row(mysql_query("SELECT login_members.log_data FROM 
+	`login_members` where user_id=$id_user_session ORDER BY `login_members`.`log_id` DESC limit 1"));
+
+//data
+$dzien = date('d');
+$dzien_tyg = date('l');
+$miesiac = date('n');
+$rok = date('Y');
+$miesiac_pl = array(1 => 'stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia');
+$dzien_tyg_pl = array('Monday' => 'poniedziałek', 'Tuesday' => 'wtorek', 'Wednesday' => 'środa', 'Thursday' => 'czwartek', 'Friday' => 'piątek', 'Saturday' => 'sobota', 'Sunday' => 'niedziela');
+
+
+echo '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Grupowanie "marki" i przycisku rozwijania mobilnego menu -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Rozwiń nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../main.php">Zgłoszenia - LubMAN UMCS</a>
+    </div>
+ 
+    <!-- Grupowanie elementów menu w celu lepszego wyświetlania na urządzeniach moblinych -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+     
+      <form class="nav navbar-nav navbar-form navbar-left" action="../wyniki.php" method=GET>
+        <div class="form-group">
+          <input type="text" class="form-control" name="zapytanie" placeholder="Szukany tekst">
+        </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
+      </form>
+	  <ul class="nav navbar-nav">';
+	if ($rola == 1)
+		{
+		echo '<li><a href="../logusers.php">Kto i kiedy</a></li>
+				<li><a href="../users.php">Użytkownicy</a></li>
+				<li><a href="../main.php">Powrót do Zgłoszeń</a></li>';
+		}
+	  echo '</ul>
+      <ul class="nav navbar-nav navbar-right">
+	  
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		  <span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+		  <li class="last_login"><strong>'.ucfirst($_SESSION['username']).'</strong></li>
+		  <li class="divider"></li>';  
+	echo '<li class="last_login">Ostatnie logowanie:<br /><b>'.$last_login.'</b></li>
+		  <li class="divider"></li>
+		  <li><a href="?logout=">Wyloguj</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>';
+
+
+
+//data
+$dzien = date('d');
+$dzien_tyg = date('l');
+$miesiac = date('n');
+$rok = date('Y');
+$miesiac_pl = array(1 => 'stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia');
+$dzien_tyg_pl = array('Monday' => 'poniedziałek', 'Tuesday' => 'wtorek', 'Wednesday' => 'środa', 'Thursday' => 'czwartek', 'Friday' => 'piątek', 'Saturday' => 'sobota', 'Sunday' => 'niedziela');
+
+?>
+<div class="container"  style="margin-top:40px;">    
+    <div class="panel panel-default">
+	<div class="panel-body">
+	<table align="center" valign="middle" width="100%">
+		<tr align="center" valign="middle">
+			<td align="left" valign="middle"><h4><?php echo 'Witaj <b>'.htmlentities(ucfirst($_SESSION['username'])).'</b>,
+	  dzisiaj jest <b>'.$dzien_tyg_pl[$dzien_tyg].'</b>, <b>'.$dzien.' '.$miesiac_pl[$miesiac].' '.$rok.' r.</b>';?></h4></td>
+			<td align="right" valign="middle"><a href="dodaj.php" align="center" valign="middle"><b>Dodaj zgłoszenie</b> 
+			<span class="glyphicon glyphicon-plus"></span></a></td>
+		</tr>
+	</table>
+	<!-- <a href="dodaj.php" align="center" valign="middle"><img src="img/newticket.png" title="Dodaj Zgłoszenie"></a>-->
+        
+	  
+        <hr>
+    
+<?php 
+include "../php/db_connect.php";
+		if ($rola == 1 || $rola == 2) {
+        $sql = 'SELECT COUNT(*) FROM zgloszenia'; //wszystkie zgłoszenia
+        $wynik = mysql_query($sql) or die ("Błąd w zapytaniu!");
+		$allusers = mysql_fetch_row ($wynik);
+
+		$sql1 = 'SELECT COUNT(*) FROM zgloszenia WHERE zgloszenia.status=0 or zgloszenia.status=3'; //wszystkie otwarte zgłoszenia
+        $wynik1 = mysql_query($sql1) or die ("Błąd w zapytaniu!");
+        $all_open_bugs = mysql_fetch_row ($wynik1);
+
+		$sql2 = 'SELECT COUNT(*) FROM zgloszenia WHERE `status`=1 '; //wszystkie zamknięte zgłoszenia
+        $wynik2 = mysql_query($sql2) or die ("Błąd w zapytaniu!");
+        $all_close_bugs = mysql_fetch_row ($wynik2);
+
+		
+		$sql3 = 'SELECT COUNT(*) FROM zgloszenia WHERE (zgloszenia.status=0 or zgloszenia.status=3) AND `grupa`= 10'; //wszystkie otwarte zgłoszenia grupa 1
+        $wynik3 = mysql_query($sql3) or die ("Błąd w zapytaniu!");
+        $all_open_bugs_serwis = mysql_fetch_row ($wynik3);
+
+		$sql4 = 'SELECT COUNT(*) FROM zgloszenia WHERE (zgloszenia.status=0 or zgloszenia.status=3) AND `grupa`= 20';//wszystkie otwarte zgłoszenia user 2
+        $wynik4 = mysql_query($sql4) or die ("Błąd w zapytaniu!");
+        $all_open_bugs_sieci = mysql_fetch_row ($wynik4);
+
+		$sql5 = 'SELECT COUNT(*) FROM zgloszenia WHERE `status`=1 AND `grupa`= 10';//wszystkie zamknięte zgłoszenia user 1
+        $wynik5 = mysql_query($sql5) or die ("Błąd w zapytaniu!");
+        $all_close_bugs_serwis = mysql_fetch_row ($wynik5);
+
+		$sql6 = 'SELECT COUNT(*) FROM zgloszenia WHERE `status`=1 AND `grupa`= 20';//wszystkie zamknięte zgłoszenia user 2
+        $wynik6 = mysql_query($sql6) or die ("Błąd w zapytaniu!");
+        $all_close_bugs_sieci = mysql_fetch_row ($wynik6);
+		
+		echo '<table  width="100%" align="center" valign="middle">
+		<tr align="center" valign="middle">
+		<td align="left" valign="middle">Wszystkie przyjęte zgłoszenia: <b>'.$allusers[0].'</b><br>
+		Wszystkie otwarte zgłoszenia: <b>'.$all_open_bugs[0].'</b><br />
+		Wszystkie zamknięte zgłoszenia: <b>'.$all_close_bugs[0].'</b><br></td><td>
+		<td align="left" valign="middle">Otwarte zgłoszenia - Serwis: <b>'.$all_open_bugs_serwis[0].'</b><br><O></O>
+		Otwarte zgłoszenia - Sieci: <b>'.$all_open_bugs_sieci[0].'</b><br></td><td>
+		<td align="left" valign="middle">Zamknięte zgłoszenia - Serwis: <b>'.$all_close_bugs_serwis[0].'</b><br>
+		Zamknięte zgłoszenia - Sieci: <b>'.$all_close_bugs_sieci[0].'</b></td></tr></table>';
+		} else {
+		
+		$grupa_sesja = $_SESSION['grupa'];
+		$sql = 'SELECT COUNT(*) FROM zgloszenia WHERE grupa = $grupa_sesja'; //wszystkie zgłoszenia
+        $wynik = mysql_query($sql) or die ("Błąd w zapytaniu!");
+		$allusers = mysql_fetch_row ($wynik);
+
+		$sql1 = 'SELECT COUNT(*) FROM zgloszenia WHERE `status`=0 AND grupa = $grupa_sesja'; //wszystkie otwarte zgłoszenia
+        $wynik1 = mysql_query($sql1) or die ("Błąd w zapytaniu!");
+        $all_open_bugs = mysql_fetch_row ($wynik1);
+
+		$sql2 = 'SELECT COUNT(*) FROM zgloszenia WHERE `status`=1 AND grupa = $grupa_sesja'; //wszystkie zamknięte zgłoszenia
+        $wynik2 = mysql_query($sql2) or die ("Błąd w zapytaniu!");
+        $all_close_bugs = mysql_fetch_row ($wynik2);
+		
+		echo '<table  width="950" align="center" valign="middle">
+		<tr align="center" valign="middle">
+		<td align="left" valign="middle">Wszystkie przyjęte zgłoszenia: <b>'.$allusers[0].'</b><br>
+		Wszystkie otwarte zgłoszenia: <b>'.$all_open_bugs[0].'</b><br />
+		Wszystkie zamknięte zgłoszenia: <b>'.$all_close_bugs[0].'</b><br></td><td></tr></table>';
+		
+		
+		}
+
+?>			
+<br /><br /></div></div> <!-- koniec kontenera z powitaniem i informacją o zgłoszeniach -->
+ 
+    

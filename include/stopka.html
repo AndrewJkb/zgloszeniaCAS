@@ -1,0 +1,10 @@
+<?php $stoper_stop = microtime(true); //koniec pomiaru  
+echo '<p>Powered by LubMAN UMCS &#169 2016-'.date('Y').'<br />
+  <span style="font-size: 9px">Created by <b>Andrzej Jakubek</b></span><br />
+	 Strona wygenerowana w <b>'.bcsub($stoper_stop, $stoper_start, 4).'</b> sekund.</p>
+</footer>';
+ob_end_flush();
+?>
+
+</body>
+</html>

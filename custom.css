@@ -1,0 +1,45 @@
+html,body,h1,h2,h3,h4,h5 {
+	font-family: "Open Sans", sans-serif
+	}
+
+body{
+	background-color: #f5f7f8;	
+}
+
+.footer{
+	width: 100%;
+	background-color: #fff !important;
+	text-align:center;
+}
+.img_notepad{
+	float:left!important; 
+	margin-right: 15px; 
+	margin-bottom: 8px;
+}
+
+.panel-data-right{
+	float:right!important;
+}
+a{
+ color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.last_login{
+	padding-left: 15px;
+}
+.collapse, .navbar-collapse{
+	background-color:#fff;
+}
+
+.container {
+	width: 70%;
+    height: 70%;
+	margin: 20px auto;
+}
+
+.icon-success {
+    color: #5CB85C;
+    padding-left: 30px;
+}

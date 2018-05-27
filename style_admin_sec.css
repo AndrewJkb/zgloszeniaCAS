@@ -1,0 +1,251 @@
+body {
+font-family: Georgia;
+color:#FFFFFF;
+background-image: url("img/bg-image-01-2050x1395.jpg");
+background-repeat: repeat-y;
+/*font-family: sans-serif;*/
+}
+
+
+.zgloszenia
+{
+color: rgb(255, 255, 255);
+font-size: 50px;
+/*background-color: rgb(51, 51, 51);*/
+letter-spacing: 15px;
+line-height: 100px;
+text-shadow: rgb(255, 255, 255) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px, rgb(255, 128, 0) 0px -10px 20px, rgb(255, 0, 0) 0px -18px 40px;
+}
+.zaloguj_sie
+{
+color: rgb(255, 255, 255);
+font-size: 40px;
+/*background-color: rgb(85, 147, 194);*/
+text-shadow: rgb(204, 204, 204) 0px 1px 0px, rgb(201, 201, 201) 0px 2px 0px, rgb(187, 187, 187) 0px 3px 0px, rgb(185, 185, 185) 0px 4px 0px, rgb(170, 170, 170) 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 6px 1px, rgba(0, 0, 0, 0.1) 0px 0px 5px, rgba(0, 0, 0, 0.3) 0px 1px 3px, rgba(0, 0, 0, 0.15) 0px 3px 5px, rgba(0, 0, 0, 0.2) 0px 5px 10px, rgba(0, 0, 0, 0.2) 0px 10px 10px, rgba(0, 0, 0, 0.1) 0px 20px 20px;
+}
+
+p {
+	text-indent: 10px;
+}
+
+a:link {
+color: #7c7c7c;
+font-size: 11px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+left: -3px;
+cursor: hand;
+}
+
+a:visited {
+color: #7c7c7c;
+font-size: 11px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+left: -3px;
+cursor: hand;
+}
+
+a:hover {
+color: #09C;
+font-size: 11px;
+font-weight: bold;
+text-align: center;
+left: -3px;
+cursor: hand;
+}
+
+td.first {
+border-right:  #E6E6Ff 3px solid;
+border-top: #E6E6Ff 1px solid;
+border-left: #E6E6Ff 3px solid;
+border-bottom: #E6E6Ff 1px solid;
+border-radius: 15px;
+padding: 10px 10px 10px 10px;
+}
+
+tr {
+/*background-color: #E6E6Ff;*/
+font-size: 12px;
+padding: 10px 10px 10px 10px;
+}
+
+tr.moje {
+/*background-color: #E6E6Ff;*/
+font-size: 12px;
+line-height: 19px;
+}
+.tekst {
+/*background-color: #E6E6Ff;*/
+font-size: 12px;
+line-height: 15px;
+}
+
+tr.przerwa {
+/*background-color: #ffffff;*/
+font-size: 12px;
+}
+
+tr.logowanie{
+	background-color: #FFFFFF;
+}
+
+/* ------------------------CZĘŚĆ-GÓRNA-MENU------------------------ */
+
+      /* wygląd głównego elementu - ol */
+      ol {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        /*background-color: #E6E6Ff;*/
+        font-size:18px;
+        height:2em;
+        line-height:2em;
+        text-align:center;
+		border-radius: 15px;
+      }
+
+      /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+      ol a {
+        display:block;
+        text-decoration:none;
+        color:#000;
+        padding:0 5px;
+      }
+
+      /* wygląd elementów - li - wszystkich dzieci elementu - ol */
+      ol > li {
+        float:left;
+        /*width:156px;*/
+		width:198px;
+        margin-left:1px;
+        /*background-color: #E6E6Ff;*/
+        height:2em;
+      }
+
+      /* wygląd elementu - li - pierwszego dziecka elementu - ol */
+      ol > li:first-child {
+        margin-left:0;
+      }
+
+      /* wygląd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover {
+        background-color:#EEE;
+		border-radius: 15px;
+      }
+
+      /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > a {
+        color:#09C;
+      }
+
+      /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > ul {
+        display:block;
+      }
+
+      /* ------------------------CZĘŚĆ-ROZWIJANA-MENU------------------------ */
+
+      /* wygląd głównych rozwijanych elementów - ul */
+      ol > li > ul {
+        display:none;
+        list-style-type:none;
+        padding:0;
+        margin:0;
+      }
+
+      /* wygląd elementu - li - w części rozwijanej */
+      ol > li > ul > li {
+        position:relative;
+        background-color:#EEE;
+		
+      }
+
+      /* wygląd elementu - a - w części rozwijanej */
+      ol > li > ul > li > a {
+        border-top:1px solid #FFF;
+      }
+
+      /* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
+      ol > li > ul > li:hover {
+        background-color:#DDD;
+		border-radius: 15px;
+      }
+
+      /* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
+      ol > li > ul > li:hover > a {
+        color:#09C;
+      }
+	  body {
+     font-family:Arial, Sans-Serif;
+}
+/* Logowanie*/
+form.logowanie {
+    border: 3px solid #f1f1f1;
+	border-radius: 15px;
+}
+
+input.logowanie[type=text], input.logowanie[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#przycisk {
+		width: 100px;
+		font-family: Georgia;
+	  color: #ffffff;
+	  background: #4CAF50;
+	  padding: 2px 2px 2px 2px;
+	  text-decoration: none;
+	}
+
+#przycisk:hover {
+		width: 100px;
+	  background: #3cb0fd;
+	  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	  text-decoration: none;
+	}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+	/*padding: 2px 2px 2px 2px;
+    padding-top: 5px;*/
+}
+.logusers{
+	font-size:12px;
+	text-align:center;
+}
